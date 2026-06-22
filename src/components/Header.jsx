@@ -12,7 +12,7 @@ export default function Header() {
     <header className="w-full flex items-center justify-between px-6 md:px-12 py-4 border-b border-sky-100 bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
       <Link
         to="/"
-        className="text-lg font-bold tracking-widest text-sky-900 hover:text-sky-600 transition uppercase"
+        className="text-lg font-bold tracking-widest text-sky-900 hover:text-sky-600 hover:scale-110 transition-all duration-300 uppercase inline-block"
       >
         <span className="text-sky-500">~</span> Tides And Tales
       </Link>

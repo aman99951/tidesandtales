@@ -99,8 +99,21 @@ export default function About() {
       {/* Journey */}
       <section className="w-full px-6 md:px-12 py-16 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-sky-900 text-center mb-12">The Journey So Far</h2>
-          <div className="space-y-8 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-sky-300 before:via-teal-300 before:to-amber-300 before:hidden md:before:block">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-teal-500 uppercase mb-3">
+              <span className="w-8 h-px bg-teal-300" />
+              Timeline
+              <span className="w-8 h-px bg-teal-300" />
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-teal-500 to-amber-500">
+              The Journey So Far
+            </h2>
+            <p className="mt-3 text-slate-400 text-sm">Every tide leaves a trace — here is mine</p>
+          </div>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-300 via-teal-300 to-amber-300 -translate-x-1/2 hidden md:block" />
+            
             {[
               {
                 num: 1,
@@ -138,17 +151,30 @@ export default function About() {
                 title: 'Dugong Conservation Research',
                 desc: 'Researched Tamil Nadu\'s 270 dugongs, the 448 sq. km Dugong Conservation Reserve in Palk Bay, and the threats facing these gentle sea cows.'
               },
-            ].map((item) => (
-              <div key={item.num} className="flex gap-4 items-start group">
-                <div className={`w-10 h-10 rounded-full border-2 ${item.color} flex items-center justify-center shrink-0 mt-0.5 shadow-md transition-transform group-hover:scale-110`}>
-                  <span className="text-sm font-bold">{item.num}</span>
+            ].map((item, idx) => {
+              const isLeft = idx % 2 === 0
+              return (
+                <div key={item.num} className={`relative flex flex-col md:flex-row items-start gap-6 mb-10 md:mb-14 group ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Circle node */}
+                  <div className="absolute left-6 md:left-1/2 top-0 md:-translate-x-1/2 z-10">
+                    <div className={`w-12 h-12 rounded-full border-2 ${item.color} flex items-center justify-center shadow-lg shadow-${item.color.split(' ')[0].replace('border-', '')}/20 transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl`}>
+                      <span className="text-base font-black">{item.num}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Content card */}
+                  <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
+                    <div className="rounded-2xl border border-sky-100 bg-white p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <span className={`inline-block text-xs font-bold tracking-widest uppercase ${item.color.split(' ')[2]}`}>
+                        Step {item.num}
+                      </span>
+                      <h3 className="text-lg font-black text-sky-900 mt-1 group-hover:text-sky-700 transition-colors">{item.title}</h3>
+                      <p className="text-sm text-slate-500 mt-2 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="pt-1">
-                  <h3 className="text-sky-900 font-bold">{item.title}</h3>
-                  <p className="text-sm text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
