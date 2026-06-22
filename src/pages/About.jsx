@@ -1,0 +1,179 @@
+import { Link } from 'react-router-dom'
+
+export default function About() {
+  return (
+    <div className="w-full">
+      {/* Hero */}
+      <section className="w-full px-6 md:px-12 py-20 md:py-28 text-center bg-hero-ocean">
+        <p className="text-xs tracking-widest text-teal-500 font-semibold uppercase mb-4">
+          The Mind Beneath The Current
+        </p>
+        <h1 className="text-4xl md:text-5xl font-black text-sky-900 glow-teal">Behind The Waves</h1>
+      </section>
+
+      {/* Profile */}
+      <section className="w-full px-6 md:px-12 py-16 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-sky-200 to-teal-100 mx-auto flex items-center justify-center shadow-xl shadow-sky-100">
+            <span className="text-5xl text-sky-500">~</span>
+          </div>
+
+          <blockquote className="mt-8 text-slate-500 italic leading-relaxed text-lg max-w-xl mx-auto">
+            &ldquo;I write the way the ocean breathes — slowly, and in layers.&rdquo;
+          </blockquote>
+
+          <div className="mt-10 text-left space-y-5 text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            <p>
+              Neha is a marine writer, ocean researcher, and storyteller who writes at the edges of dreams 
+              and deep water. Her work blends scientific research, artistic observation, and emotional 
+              cartography — a place where dolphins communicate, dugongs graze on seagrass, and every 
+              reflection becomes a small constellation.
+            </p>
+            <p>
+              Her journey began at the <strong className="text-sky-700">Atlantis Explorer's Club in Dubai</strong>, 
+              where she participated in the <strong className="text-teal-700">Marine Biologist</strong> activity and 
+              discovered her passion for dolphins. She went on to earn two certifications from the club:
+            </p>
+            <ul className="space-y-3">
+              <li className="flex gap-3">
+                <span className="text-sky-500 shrink-0 mt-0.5">►</span>
+                <span><strong className="text-sky-800">Meet the Expert — Shark Diver</strong> <span className="text-slate-400">(15 June 2025)</span> — Shark education, fin identification, and marine ecosystem awareness.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-teal-500 shrink-0 mt-0.5">►</span>
+                <span><strong className="text-teal-800">Meet the Expert Programme — Marine Vet</strong> <span className="text-slate-400">(14 June 2025)</span> — Marine veterinary science, laboratory work, and species research.</span>
+              </li>
+            </ul>
+
+            {/* Certificate Images */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="group">
+                <div className="rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <img src="/images/cert-shark-diver.jpg" alt="Shark Diver Certificate" className="w-full h-auto max-h-96 object-contain bg-sky-50 p-2" loading="lazy" />
+                </div>
+                <p className="mt-2 text-xs text-slate-400 text-center font-medium">Meet the Expert — Shark Diver (15 June 2025)</p>
+              </div>
+              <div className="group">
+                <div className="rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <img src="/images/cert-marine-vet.jpg" alt="Marine Vet Certificate" className="w-full h-auto max-h-96 object-contain bg-sky-50 p-2" loading="lazy" />
+                </div>
+                <p className="mt-2 text-xs text-slate-400 text-center font-medium">Meet the Expert Programme — Marine Vet (14 June 2025)</p>
+              </div>
+            </div>
+            <p>
+              She has since conducted extensive research on dolphins (8 pages of detailed notes covering 
+              anatomy, 35 species, echolocation, signature whistles, and nursing), dugongs (Tamil Nadu's 
+              270-strong population and the 448 sq. km conservation reserve in Palk Bay), moray eels 
+              (200 species with pharyngeal jaws), and beach pollution (Besant Beach survey with actual 
+              data: 37+ microplastics, 7+ glass pieces, 4 bottle caps). Her field notes include bar graphs, 
+              species sketches, and comparative beach analyses between Besant and Pattinapakkam.
+            </p>
+            <p className="text-slate-400 italic">
+              This archive grows tide by tide. New stories surface whenever the moon agrees. 
+              There is no schedule, only currents. Bring your softest attention and stay as long as you need.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="w-full px-6 md:px-12 py-16 bg-sky-50/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-sky-100 bg-white p-6 text-center shadow-sm">
+              <p className="text-xs text-slate-400 uppercase tracking-widest font-semibold">Writes</p>
+              <p className="mt-2 text-slate-600 font-medium">Marine research &middot; Tales &middot; Field notes &middot; Conservation</p>
+            </div>
+            <div className="rounded-2xl border border-teal-100 bg-white p-6 text-center shadow-sm">
+              <p className="text-xs text-slate-400 uppercase tracking-widest font-semibold">Certifications</p>
+              <p className="mt-2 text-sky-600 font-medium">Shark Diver &middot; Marine Vet &middot; Atlantis Explorers Club</p>
+            </div>
+            <div className="rounded-2xl border border-amber-100 bg-white p-6 text-center shadow-sm">
+              <p className="text-xs text-slate-400 uppercase tracking-widest font-semibold">Currently</p>
+              <p className="mt-2 text-slate-600 font-medium">Researching dolphins &amp; writing new tides</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Journey */}
+      <section className="w-full px-6 md:px-12 py-16 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-sky-900 text-center mb-12">The Journey So Far</h2>
+          <div className="space-y-8 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-sky-300 before:via-teal-300 before:to-amber-300 before:hidden md:before:block">
+            {[
+              {
+                num: 1,
+                color: 'border-sky-400 bg-sky-100 text-sky-600',
+                title: "Atlantis Explorer's Club — Dubai",
+                desc: 'Participated in the Marine Biologist activity where she chose dolphins out of sea lions, dolphins, and starfish — sparking her lifelong passion for marine research.'
+              },
+              {
+                num: 2,
+                color: 'border-teal-400 bg-teal-100 text-teal-600',
+                title: 'Meet the Expert — Shark Diver',
+                desc: 'Completed on 15 June 2025. Learned shark anatomy, fin identification (straight trailing edge vs dolphin\'s curved), and ocean conservation.'
+              },
+              {
+                num: 3,
+                color: 'border-amber-400 bg-amber-100 text-amber-600',
+                title: 'Meet the Expert Programme — Marine Vet',
+                desc: 'Completed on 14 June 2025. Advanced certification in marine veterinary science with laboratory work and species research.'
+              },
+              {
+                num: 4,
+                color: 'border-purple-400 bg-purple-100 text-purple-600',
+                title: 'Dolphin Research — 8 Pages of Notes',
+                desc: 'Comprehensive research covering dolphin anatomy, 35 species, echolocation, signature whistles, reproduction, and nursing. Includes 10+ bibliographic sources.'
+              },
+              {
+                num: 5,
+                color: 'border-emerald-400 bg-emerald-100 text-emerald-600',
+                title: 'Beach Pollution Surveys',
+                desc: 'Conducted detailed field surveys of Besant Beach (documenting 37+ microplastics, 7+ glass pieces, 4 bottle caps) and Pattinapakkam Beach (notably clean with zero microplastics).'
+              },
+              {
+                num: 6,
+                color: 'border-sky-400 bg-sky-100 text-sky-600',
+                title: 'Dugong Conservation Research',
+                desc: 'Researched Tamil Nadu\'s 270 dugongs, the 448 sq. km Dugong Conservation Reserve in Palk Bay, and the threats facing these gentle sea cows.'
+              },
+            ].map((item) => (
+              <div key={item.num} className="flex gap-4 items-start group">
+                <div className={`w-10 h-10 rounded-full border-2 ${item.color} flex items-center justify-center shrink-0 mt-0.5 shadow-md transition-transform group-hover:scale-110`}>
+                  <span className="text-sm font-bold">{item.num}</span>
+                </div>
+                <div className="pt-1">
+                  <h3 className="text-sky-900 font-bold">{item.title}</h3>
+                  <p className="text-sm text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="w-full px-6 md:px-12 py-16 bg-sky-50/50 border-t border-sky-100 text-center">
+        <h2 className="text-2xl font-bold text-sky-900 glow-amber">Dive Into the Archive</h2>
+        <p className="mt-4 text-slate-500 max-w-md mx-auto">
+          22 tales spanning marine research, conservation fieldwork, and personal reflections from the deep.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link
+            to="/blogs"
+            className="px-8 py-3 rounded-full bg-sky-500 text-white text-sm font-semibold shadow-lg shadow-sky-200 hover:bg-sky-600 hover:shadow-xl transition-all"
+          >
+            Explore the archive &rarr;
+          </Link>
+          <Link
+            to="/library"
+            className="px-8 py-3 rounded-full border-2 border-sky-200 text-sky-700 text-sm font-semibold hover:border-sky-400 hover:bg-sky-50 transition-all"
+          >
+            View Research Library
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}

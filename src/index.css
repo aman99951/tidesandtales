@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Segoe UI", system-ui, sans-serif;
+  --font-body: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #475569;
+  font-family: var(--font-body);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* === Glow Effects (for headings) === */
+.glow-sky {
+  text-shadow: 0 0 30px rgba(14, 165, 233, 0.3), 0 0 60px rgba(14, 165, 233, 0.1);
+}
+.glow-teal {
+  text-shadow: 0 0 30px rgba(20, 184, 166, 0.3), 0 0 60px rgba(20, 184, 166, 0.1);
+}
+.glow-amber {
+  text-shadow: 0 0 30px rgba(245, 158, 11, 0.3), 0 0 60px rgba(245, 158, 11, 0.1);
+}
+.glow-emerald {
+  text-shadow: 0 0 30px rgba(16, 185, 129, 0.3), 0 0 60px rgba(16, 185, 129, 0.1);
+}
+.glow-rose {
+  text-shadow: 0 0 30px rgba(244, 63, 94, 0.3), 0 0 60px rgba(244, 63, 94, 0.1);
+}
+
+/* === Card Shadows === */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(14, 165, 233, 0.06), 0 1px 2px rgba(14, 165, 233, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-shadow:hover {
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1), 0 4px 10px rgba(14, 165, 233, 0.05);
+  transform: translateY(-2px);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 4px 6px rgba(14, 165, 233, 0.05), 0 10px 15px rgba(14, 165, 233, 0.03);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-shadow-lg:hover {
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.12), 0 8px 20px rgba(14, 165, 233, 0.06);
+  transform: translateY(-3px);
+}
+
+/* === Section Backgrounds === */
+.section-white {
+  background: #ffffff;
+}
+.section-sky {
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+}
+.section-cyan {
+  background: linear-gradient(180deg, #ecfeff 0%, #ccfbf1 50%, #ecfeff 100%);
+}
+
+/* === Hero Gradient === */
+.bg-hero-ocean {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #ecfeff 60%, #f0fdf4 100%);
+}
+
+.bg-hero-wave {
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+/* === Decorative Wave Divider === */
+.wave-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+.wave-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z' fill='rgba(14,165,233,0.06)'/%3E%3C/svg%3E") no-repeat;
+  background-size: 100% 60px;
+}
+
+/* === Selection === */
+::selection {
+  background: rgba(14, 165, 233, 0.2);
+  color: #0c4a6e;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* === Glassmorphism === */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* === Premium Shadows === */
+.shadow-premium {
+  box-shadow: 0 1px 3px rgba(14, 165, 233, 0.04),
+              0 4px 12px rgba(14, 165, 233, 0.06),
+              0 12px 30px rgba(14, 165, 233, 0.04);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.shadow-premium:hover {
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08),
+              0 12px 30px rgba(14, 165, 233, 0.1),
+              0 24px 50px rgba(14, 165, 233, 0.06);
+  transform: translateY(-4px);
+}
+
+/* === Premium Card (bento style) === */
+.card-bento {
+  background: #ffffff;
+  border: 1px solid rgba(14, 165, 233, 0.08);
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-bento:hover {
+  border-color: rgba(14, 165, 233, 0.2);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08),
+              0 24px 48px rgba(14, 165, 233, 0.04);
+  transform: translateY(-3px);
+}
+
+/* === Decorative gradient text === */
+.text-gradient-sky {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0d9488, #14b8a6, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Mask fade for scroll hint === */
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* === Scroll Indicator Animation === */
+@keyframes scroll-indicator {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+.animate-scroll {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+/* === Float Animation === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* === Entrance animations === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+.animate-fade-up-d1 {
+  animation: fade-up 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+}
+.animate-fade-up-d2 {
+  animation: fade-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+.animate-fade-up-d3 {
+  animation: fade-up 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+.animate-fade-up-d4 {
+  animation: fade-up 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* === Prose overrides for light theme === */
+.prose-light h2 {
+  color: #0c4a6e;
+  font-weight: 700;
+}
+.prose-light p {
+  color: #475569;
+  line-height: 1.8;
+}
+.prose-light li {
+  color: #475569;
+}
+.prose-light blockquote {
+  color: #64748b;
+  border-left-color: #14b8a6;
+}
