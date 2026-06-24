@@ -160,7 +160,7 @@ I want to be more like a jellyfish. Not passive, but adaptive. Not brainless, bu
     category: 'Personal Writing',
     date: 'Aug 10, 2026',
     readTime: '6 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0100_p1.png', '/images/handwritten/DOC-20260609-WA0100_p2.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0100_p1.jpg', '/images/handwritten/DOC-20260609-WA0100_p2.jpg'],
     content: `When I went to Atlantis Explorer's Club at Dubai, there was an absolutely interesting activity called "Marine Biologist" where children had the opportunity to dive into the vast world of marine animals. My instincts wanted me to join it the moment I saw the activity page. I immediately rushed to join the program and was amazed by the variety of creatures that I wasn't aware of.
 
 Later, as we were more in number, our guides asked us to choose from three creatures: SEA LIONS, DOLPHINS, and STARFISH. Something inside me triggered me to choose DOLPHINS. And that's where my journey started.
@@ -178,7 +178,7 @@ The dolphin's intelligence, social bonds, and communication abilities continue t
     category: 'Ocean Facts',
     date: 'Aug 8, 2026',
     readTime: '12 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0099_p1.png', '/images/handwritten/DOC-20260609-WA0099_p2.png', '/images/handwritten/DOC-20260609-WA0099_p3.png', '/images/handwritten/DOC-20260609-WA0099_p4.png', '/images/handwritten/DOC-20260609-WA0099_p5.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0099_p1.jpg', '/images/handwritten/DOC-20260609-WA0099_p2.jpg', '/images/handwritten/DOC-20260609-WA0099_p3.jpg', '/images/handwritten/DOC-20260609-WA0099_p4.jpg', '/images/handwritten/DOC-20260609-WA0099_p5.jpg'],
     content: `After my experience at the Atlantis Explorer's Club in Dubai, I dove deep into dolphin research. Here is everything I've learned.
 
 WEBSITES USED FOR RESEARCH:
@@ -230,7 +230,7 @@ UNPOPULAR DOLPHIN SPECIES:
     category: 'Ocean Facts',
     date: 'Aug 6, 2026',
     readTime: '10 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0103_p1.png', '/images/handwritten/DOC-20260609-WA0103_p2.png', '/images/handwritten/DOC-20260609-WA0103_p3.png', '/images/handwritten/DOC-20260609-WA0103_p4.png', '/images/handwritten/DOC-20260609-WA0103_p5.png', '/images/handwritten/DOC-20260609-WA0103_p6.png', '/images/handwritten/DOC-20260609-WA0103_p7.png', '/images/handwritten/DOC-20260609-WA0103_p8.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0103_p1.jpg', '/images/handwritten/DOC-20260609-WA0103_p2.jpg', '/images/handwritten/DOC-20260609-WA0103_p3.jpg', '/images/handwritten/DOC-20260609-WA0103_p4.jpg', '/images/handwritten/DOC-20260609-WA0103_p5.jpg', '/images/handwritten/DOC-20260609-WA0103_p6.jpg', '/images/handwritten/DOC-20260609-WA0103_p7.jpg', '/images/handwritten/DOC-20260609-WA0103_p8.jpg'],
     content: `The birth of a dolphin is one of the most remarkable events in the marine world. Here is my detailed research on how these intelligent mammals bring their young into the world.
 
 THE BIRTH PROCESS:
@@ -285,7 +285,7 @@ Interesting Fact: Baby calves don't sleep at all for the first weeks of their li
     category: 'Marine Life',
     date: 'Aug 4, 2026',
     readTime: '8 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0098_p1.png', '/images/handwritten/DOC-20260609-WA0098_p2.png', '/images/handwritten/DOC-20260609-WA0098_p3.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0098_p1.jpg', '/images/handwritten/DOC-20260609-WA0098_p2.jpg', '/images/handwritten/DOC-20260609-WA0098_p3.jpg'],
     content: `The dugong (Dugong dugon) is a large, herbivorous marine mammal often referred to as the "Sea Cow," belonging to the order SIRENIA. It is the only living representative of the family DUGONGIDAE, as its closest relative, the STELLER'S SEA COW, was hunted to extinction in the 18th century. Dugongs are strictly marine and are known for their unique dolphin-like tail flukes, gentle nature, and, sometimes, for inspiring legends of mermaids.
 
 SILENT SWIMMERS OF TAMIL NADU:
@@ -329,7 +329,7 @@ CHARACTERISTICS OF THE DUGONG:
     category: 'Marine Life',
     date: 'Aug 2, 2026',
     readTime: '5 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0096_p1.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0096_p1.jpg'],
     content: `One of the most basic yet important skills in marine biology is learning to tell sharks and dolphins apart by their fins.
 
 SHARK FINS VS DOLPHIN FINS:
@@ -362,7 +362,7 @@ World Ocean Day is celebrated every year on June 8th. Here are meaningful activi
     category: 'Conservation',
     date: 'Jul 30, 2026',
     readTime: '7 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0102_p1.png', '/images/handwritten/DOC-20260609-WA0102_p2.png', '/images/handwritten/DOC-20260609-WA0102_p3.png', '/images/handwritten/DOC-20260609-WA0102_p4.png', '/images/handwritten/DOC-20260609-WA0102_p5.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0102_p1.jpg', '/images/handwritten/DOC-20260609-WA0102_p2.jpg', '/images/handwritten/DOC-20260609-WA0102_p3.jpg', '/images/handwritten/DOC-20260609-WA0102_p4.jpg', '/images/handwritten/DOC-20260609-WA0102_p5.jpg'],
     content: `I conducted a detailed beach pollution survey on Besant Beach, documenting every item I found. Here are the raw findings.
 
 BESANT BEACH SURVEY — FINDINGS:
@@ -419,7 +419,7 @@ The contrast between these two beaches — just kilometers apart — tells us th
     category: 'Marine Life',
     date: 'Jul 28, 2026',
     readTime: '6 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0101_p1.png', '/images/handwritten/DOC-20260609-WA0101_p2.png', '/images/handwritten/DOC-20260609-WA0101_p3.png', '/images/handwritten/DOC-20260609-WA0101_p4.png', '/images/handwritten/DOC-20260609-WA0101_p5.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0101_p1.jpg', '/images/handwritten/DOC-20260609-WA0101_p2.jpg', '/images/handwritten/DOC-20260609-WA0101_p3.jpg', '/images/handwritten/DOC-20260609-WA0101_p4.jpg', '/images/handwritten/DOC-20260609-WA0101_p5.jpg'],
     content: `Moray eels are slender, elusive, shy, snake-like bony fishes who live under ledges and in rock crevices. There are roughly 200 different species of moray eel in the world's marine environments.
 
 LOWER CLASSIFICATIONS (SPECIES):
@@ -526,7 +526,7 @@ This kind of technology represents the future of marine conservation — combini
     category: 'Marine Life',
     date: 'Jul 20, 2026',
     readTime: '5 min read',
-    images: ['/images/handwritten/DOC-20260609-WA0097_p1.png', '/images/handwritten/DOC-20260609-WA0097_p2.png', '/images/handwritten/DOC-20260609-WA0097_p3.png', '/images/handwritten/DOC-20260609-WA0097_p4.png'],
+    images: ['/images/handwritten/DOC-20260609-WA0097_p1.jpg', '/images/handwritten/DOC-20260609-WA0097_p2.jpg', '/images/handwritten/DOC-20260609-WA0097_p3.jpg', '/images/handwritten/DOC-20260609-WA0097_p4.jpg'],
     content: `Octopuses are remarkable creatures that seem to belong to another world. With their eight dexterous arms, bulbous heads, and ability to change color and texture in an instant, they are the closest thing to alien intelligence we have on Earth.
 
 EXTRAORDINARY ABILITIES:
