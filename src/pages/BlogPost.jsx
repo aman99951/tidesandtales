@@ -2,25 +2,48 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { tales, categories } from '../data/tales'
 
-function Lightbox({ image, onClose }) {
+function Lightbox({ images, currentIndex, onClose, onPrev, onNext }) {
+  const image = images?.[currentIndex]
   useEffect(() => {
-    if (!image) return
-    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    if (!images) return
+    const handleKey = (e) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') onPrev()
+      if (e.key === 'ArrowRight') onNext()
+    }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
-  }, [image, onClose])
-  if (!image) return null
+  }, [images, currentIndex, onClose, onPrev, onNext])
+  if (!images || !image) return null
+  const total = images.length
+  const isFirst = currentIndex === 0
+  const isLast = currentIndex === total - 1
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm" onClick={onClose}>
       <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onClick={e => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute -top-12 right-0 text-white/70 hover:text-white text-sm font-medium transition z-10 flex items-center gap-1.5">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-          Close
-        </button>
+        {/* Top bar */}
+        <div className="absolute -top-12 right-0 left-0 flex items-center justify-between">
+          <span className="text-white/50 text-sm font-medium">{currentIndex + 1} / {total}</span>
+          <button onClick={onClose} className="text-white/70 hover:text-white text-sm font-medium transition flex items-center gap-1.5">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            Close
+          </button>
+        </div>
+        {/* Navigation */}
+        {!isFirst && (
+          <button onClick={onPrev} className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center transition z-10">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+        )}
+        {!isLast && (
+          <button onClick={onNext} className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center transition z-10">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </button>
+        )}
         <img src={image.src} alt={image.alt} className="w-full h-auto max-h-[80vh] object-contain rounded-2xl shadow-2xl" />
         <p className="mt-4 text-white/60 text-sm text-center font-medium">{image.caption}</p>
       </div>
@@ -31,7 +54,7 @@ function Lightbox({ image, onClose }) {
 export default function BlogPost() {
   const { id } = useParams()
   const tale = tales.find(t => t.id === Number(id))
-  const [lightboxImage, setLightboxImage] = useState(null)
+  const [lightbox, setLightbox] = useState(null) // { images, currentIndex }
 
   if (!tale) {
     return (
@@ -155,7 +178,7 @@ export default function BlogPost() {
               <p className="text-sm text-slate-500 mb-6">Scanned pages from Neha&rsquo;s research journal &mdash; click to view full size.</p>
               <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {tale.images.map((img, i) => (
-                  <button key={i} onClick={() => setLightboxImage({ src: img, alt: `Handwritten note page ${i + 1}`, caption: `Page ${i + 1} of ${tale.title}` })} className="group text-left cursor-pointer">
+                  <button key={i} onClick={() => setLightbox({ images: tale.images.map((src, idx) => ({ src, alt: `Handwritten note page ${idx + 1}`, caption: `Page ${idx + 1} of ${tale.title}` })), currentIndex: i })} className="group text-left cursor-pointer">
                     <div className="relative rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <img src={img} alt={`Handwritten note page ${i + 1}`} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end justify-center p-3">
@@ -209,7 +232,13 @@ export default function BlogPost() {
         )}
       </div>
 
-      <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
+      <Lightbox
+        images={lightbox?.images}
+        currentIndex={lightbox?.currentIndex ?? 0}
+        onClose={() => setLightbox(null)}
+        onPrev={() => setLightbox(prev => prev ? { ...prev, currentIndex: prev.currentIndex - 1 } : prev)}
+        onNext={() => setLightbox(prev => prev ? { ...prev, currentIndex: prev.currentIndex + 1 } : prev)}
+      />
     </>
   )
 }
