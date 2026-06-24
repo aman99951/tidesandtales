@@ -1,6 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Lightbox from '../components/Lightbox'
+
+const certImages = [
+  { src: '/images/cert-shark-diver.jpg', alt: 'Shark Diver Certificate', caption: 'Meet the Expert — Shark Diver (15 June 2025)' },
+  { src: '/images/cert-marine-vet.jpg', alt: 'Marine Vet Certificate', caption: 'Meet the Expert Programme — Marine Vet (14 June 2025)' },
+]
 
 export default function About() {
+  const [lightbox, setLightbox] = useState(null)
   return (
     <div className="w-full">
       {/* Hero */}
@@ -47,18 +55,14 @@ export default function About() {
 
             {/* Certificate Images */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="group">
-                <div className="rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <img src="/images/cert-shark-diver.jpg" alt="Shark Diver Certificate" className="w-full h-auto max-h-96 object-contain bg-sky-50 p-2" loading="lazy" />
-                </div>
-                <p className="mt-2 text-xs text-slate-400 text-center font-medium">Meet the Expert — Shark Diver (15 June 2025)</p>
-              </div>
-              <div className="group">
-                <div className="rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <img src="/images/cert-marine-vet.jpg" alt="Marine Vet Certificate" className="w-full h-auto max-h-96 object-contain bg-sky-50 p-2" loading="lazy" />
-                </div>
-                <p className="mt-2 text-xs text-slate-400 text-center font-medium">Meet the Expert Programme — Marine Vet (14 June 2025)</p>
-              </div>
+              {certImages.map((img, i) => (
+                <button key={i} onClick={() => setLightbox({ images: certImages, currentIndex: i })} className="group text-left cursor-pointer">
+                  <div className="rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <img src={img.src} alt={img.alt} className="w-full h-auto max-h-96 object-contain bg-sky-50 p-2" loading="lazy" />
+                  </div>
+                  <p className="mt-2 text-xs text-slate-400 text-center font-medium">{img.caption}</p>
+                </button>
+              ))}
             </div>
             <p>
               She has since conducted extensive research on dolphins (8 pages of detailed notes covering 
@@ -200,6 +204,14 @@ export default function About() {
           </Link>
         </div>
       </section>
+
+      <Lightbox
+        images={lightbox?.images}
+        currentIndex={lightbox?.currentIndex ?? 0}
+        onClose={() => setLightbox(null)}
+        onPrev={() => setLightbox(prev => prev ? { ...prev, currentIndex: prev.currentIndex - 1 } : prev)}
+        onNext={() => setLightbox(prev => prev ? { ...prev, currentIndex: prev.currentIndex + 1 } : prev)}
+      />
     </div>
   )
 }
