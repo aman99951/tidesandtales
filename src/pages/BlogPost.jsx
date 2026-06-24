@@ -1,9 +1,37 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { tales, categories } from '../data/tales'
+
+function Lightbox({ image, onClose }) {
+  useEffect(() => {
+    if (!image) return
+    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [image, onClose])
+  if (!image) return null
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onClick={e => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute -top-12 right-0 text-white/70 hover:text-white text-sm font-medium transition z-10 flex items-center gap-1.5">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          Close
+        </button>
+        <img src={image.src} alt={image.alt} className="w-full h-auto max-h-[80vh] object-contain rounded-2xl shadow-2xl" />
+        <p className="mt-4 text-white/60 text-sm text-center font-medium">{image.caption}</p>
+      </div>
+    </div>
+  )
+}
 
 export default function BlogPost() {
   const { id } = useParams()
   const tale = tales.find(t => t.id === Number(id))
+  const [lightboxImage, setLightboxImage] = useState(null)
 
   if (!tale) {
     return (
@@ -26,6 +54,7 @@ export default function BlogPost() {
   const relatedTales = tales.filter(t => t.category === tale.category && t.id !== tale.id).slice(0, 3)
 
   return (
+    <>
     <div className="w-full">
       {/* Header */}
       <section className="w-full px-6 md:px-12 py-16 md:py-20 bg-hero-wave border-b border-sky-100">
@@ -116,6 +145,32 @@ export default function BlogPost() {
             })}
           </div>
 
+          {/* Handwritten Notes */}
+          {tale.images && tale.images.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-sky-100">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                <span className="text-xs font-semibold tracking-widest text-slate-400 uppercase">Original Handwritten Notes</span>
+              </div>
+              <p className="text-sm text-slate-500 mb-6">Scanned pages from Neha&rsquo;s research journal &mdash; click to view full size.</p>
+              <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {tale.images.map((img, i) => (
+                  <button key={i} onClick={() => setLightboxImage({ src: img, alt: `Handwritten note page ${i + 1}`, caption: `Page ${i + 1} of ${tale.title}` })} className="group text-left cursor-pointer">
+                    <div className="relative rounded-xl overflow-hidden border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <img src={img} alt={`Handwritten note page ${i + 1}`} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end justify-center p-3">
+                        <span className="text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">
+                          View &rarr;
+                        </span>
+                      </div>
+                    </div>
+                    <p className="mt-1.5 text-xs text-slate-400 text-center font-medium">Page {i + 1}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Footer */}
           <div className="mt-12 pt-8 border-t border-sky-100">
             <div className="flex flex-wrap items-center gap-3">
@@ -150,8 +205,11 @@ export default function BlogPost() {
               ))}
             </div>
           </div>
-        </section>
-      )}
-    </div>
+          </section>
+        )}
+      </div>
+
+      <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
+    </>
   )
 }

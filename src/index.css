@@ -3,6 +3,26 @@
 @theme {
   --font-display: "Segoe UI", system-ui, sans-serif;
   --font-body: "Segoe UI", system-ui, sans-serif;
+  --color-sky-50: #FDF4FF;
+  --color-sky-100: #FAE8FF;
+  --color-sky-200: #F0D4FF;
+  --color-sky-300: #E3A8FF;
+  --color-sky-400: #D67AFF;
+  --color-sky-500: #BC13FE;
+  --color-sky-600: #9C0ED6;
+  --color-sky-700: #7A0AAB;
+  --color-sky-800: #58087D;
+  --color-sky-900: #36054F;
+  --color-teal-50: #E6F7F7;
+  --color-teal-100: #B3E8E8;
+  --color-teal-200: #80D9D9;
+  --color-teal-300: #4DCACA;
+  --color-teal-400: #26B2B2;
+  --color-teal-500: #069494;
+  --color-teal-600: #057777;
+  --color-teal-700: #045A5A;
+  --color-teal-800: #033D3D;
+  --color-teal-900: #022020;
 }
 
 body {
@@ -20,10 +40,10 @@ body {
 
 /* === Glow Effects (for headings) === */
 .glow-sky {
-  text-shadow: 0 0 30px rgba(14, 165, 233, 0.3), 0 0 60px rgba(14, 165, 233, 0.1);
+  text-shadow: 0 0 30px rgba(188, 19, 254, 0.3), 0 0 60px rgba(188, 19, 254, 0.1);
 }
 .glow-teal {
-  text-shadow: 0 0 30px rgba(20, 184, 166, 0.3), 0 0 60px rgba(20, 184, 166, 0.1);
+  text-shadow: 0 0 30px rgba(6, 148, 148, 0.3), 0 0 60px rgba(6, 148, 148, 0.1);
 }
 .glow-amber {
   text-shadow: 0 0 30px rgba(245, 158, 11, 0.3), 0 0 60px rgba(245, 158, 11, 0.1);
@@ -37,20 +57,20 @@ body {
 
 /* === Card Shadows === */
 .card-shadow {
-  box-shadow: 0 1px 3px rgba(14, 165, 233, 0.06), 0 1px 2px rgba(14, 165, 233, 0.04);
+  box-shadow: 0 1px 3px rgba(188, 19, 254, 0.06), 0 1px 2px rgba(188, 19, 254, 0.04);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .card-shadow:hover {
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1), 0 4px 10px rgba(14, 165, 233, 0.05);
+  box-shadow: 0 10px 25px rgba(188, 19, 254, 0.1), 0 4px 10px rgba(188, 19, 254, 0.05);
   transform: translateY(-2px);
 }
 
 .card-shadow-lg {
-  box-shadow: 0 4px 6px rgba(14, 165, 233, 0.05), 0 10px 15px rgba(14, 165, 233, 0.03);
+  box-shadow: 0 4px 6px rgba(188, 19, 254, 0.05), 0 10px 15px rgba(188, 19, 254, 0.03);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .card-shadow-lg:hover {
-  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.12), 0 8px 20px rgba(14, 165, 233, 0.06);
+  box-shadow: 0 20px 40px rgba(188, 19, 254, 0.12), 0 8px 20px rgba(188, 19, 254, 0.06);
   transform: translateY(-3px);
 }
 
@@ -59,42 +79,25 @@ body {
   background: #ffffff;
 }
 .section-sky {
-  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+  background: linear-gradient(180deg, #FDF4FF 0%, #FAE8FF 50%, #FDF4FF 100%);
 }
 .section-cyan {
-  background: linear-gradient(180deg, #ecfeff 0%, #ccfbf1 50%, #ecfeff 100%);
+  background: linear-gradient(180deg, #E6F7F7 0%, #B3E8E8 50%, #E6F7F7 100%);
 }
 
 /* === Hero Gradient === */
 .bg-hero-ocean {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #ecfeff 60%, #f0fdf4 100%);
+  background: linear-gradient(135deg, #FDF4FF 0%, #FAE8FF 30%, #E6F7F7 60%, #E6F7F7 100%);
 }
 
 .bg-hero-wave {
-  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
-}
-
-/* === Decorative Wave Divider === */
-.wave-divider {
-  position: relative;
-  height: 60px;
-  overflow: hidden;
-}
-.wave-divider::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 60px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z' fill='rgba(14,165,233,0.06)'/%3E%3C/svg%3E") no-repeat;
-  background-size: 100% 60px;
+  background: linear-gradient(180deg, #FDF4FF 0%, #ffffff 100%);
 }
 
 /* === Selection === */
 ::selection {
-  background: rgba(14, 165, 233, 0.2);
-  color: #0c4a6e;
+  background: rgba(188, 19, 254, 0.2);
+  color: #58087D;
 }
 
 /* === Scrollbar === */
@@ -128,41 +131,41 @@ body {
 
 /* === Premium Shadows === */
 .shadow-premium {
-  box-shadow: 0 1px 3px rgba(14, 165, 233, 0.04),
-              0 4px 12px rgba(14, 165, 233, 0.06),
-              0 12px 30px rgba(14, 165, 233, 0.04);
+  box-shadow: 0 1px 3px rgba(188, 19, 254, 0.04),
+              0 4px 12px rgba(188, 19, 254, 0.06),
+              0 12px 30px rgba(188, 19, 254, 0.04);
   transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 .shadow-premium:hover {
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08),
-              0 12px 30px rgba(14, 165, 233, 0.1),
-              0 24px 50px rgba(14, 165, 233, 0.06);
+  box-shadow: 0 4px 12px rgba(188, 19, 254, 0.08),
+              0 12px 30px rgba(188, 19, 254, 0.1),
+              0 24px 50px rgba(188, 19, 254, 0.06);
   transform: translateY(-4px);
 }
 
 /* === Premium Card (bento style) === */
 .card-bento {
   background: #ffffff;
-  border: 1px solid rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(188, 19, 254, 0.08);
   border-radius: 1.25rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-bento:hover {
-  border-color: rgba(14, 165, 233, 0.2);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08),
-              0 24px 48px rgba(14, 165, 233, 0.04);
+  border-color: rgba(188, 19, 254, 0.2);
+  box-shadow: 0 8px 24px rgba(188, 19, 254, 0.08),
+              0 24px 48px rgba(188, 19, 254, 0.04);
   transform: translateY(-3px);
 }
 
 /* === Decorative gradient text === */
 .text-gradient-sky {
-  background: linear-gradient(135deg, #0284c7, #0ea5e9, #14b8a6);
+  background: linear-gradient(135deg, #BC13FE, #D67AFF, #069494);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .text-gradient-teal {
-  background: linear-gradient(135deg, #0d9488, #14b8a6, #2dd4bf);
+  background: linear-gradient(135deg, #069494, #26B2B2, #4DCACA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -237,7 +240,7 @@ body {
 
 /* === Prose overrides for light theme === */
 .prose-light h2 {
-  color: #0c4a6e;
+  color: #36054F;
   font-weight: 700;
 }
 .prose-light p {
@@ -249,5 +252,5 @@ body {
 }
 .prose-light blockquote {
   color: #64748b;
-  border-left-color: #14b8a6;
+  border-left-color: #069494;
 }
